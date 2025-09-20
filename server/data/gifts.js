@@ -14,7 +14,7 @@ const giftData = [
       "name": "Lego Flower Bouquet Kit",
       "pricePoint": "$",
       "audience": "Green Thumbs",
-      "image":"https://tinyurl.com/ydpv2bt9",
+      "image":"https://www.lego.com/cdn/cs/set/assets/blt3e93aaf180737b50/10347_WEB_SEC01_NOBG.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2",
       "description":"A gift and fun activity to do together",
       "submittedBy":"Isabel",
       "submittedOn":"2023-02-14T12:32:00"
@@ -24,7 +24,7 @@ const giftData = [
       "name": "Nintendo Switch Lite",
       "pricePoint": "$$",
       "audience": "Gamers",
-      "image":"https://tinyurl.com/2cdfe59x",
+      "image":"https://m.media-amazon.com/images/I/51YVBwPuPoL._UF1000,1000_QL80_.jpg",
       "description":"A gift for gamers on-the-go",
       "submittedBy":"Mario",
       "submittedOn":"2022-09-13T11:01:00"
@@ -34,7 +34,7 @@ const giftData = [
       "name": "Nike Panda Dunks",
       "pricePoint": "$$",
       "audience": "Sneakerheads",
-      "image":"https://tinyurl.com/y9bzv8xd",
+      "image":"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/NIKE+DUNK+HI+RETRO.png",
       "description":"A fan-favorite black and white color-blocking sneaker",
       "submittedBy":"Jason",
       "submittedOn":"2023-03-10T05:23:00"
@@ -44,7 +44,7 @@ const giftData = [
       "name": "Razer Kitty Headset",
       "pricePoint": "$$",
       "audience": "Gamers",
-      "image":"https://tinyurl.com/4pt84wry",
+      "image":"https://media.gamestop.com/i/gamestop/20016026_ALT03/Razer-Sanrio-Kraken-Kitty-V2-Wireless-Bluetooth-RGB-Headset-with-Kitty-Ears---Hello-Kitty-and-Friends-Edition?$pdp$?w=1256&h=664&fmt=auto",
       "description":"Create the purrfect gaming look with your own killer kitty style",
       "submittedBy":"Pixie",
       "submittedOn":"2011-10-10T14:48:00"
