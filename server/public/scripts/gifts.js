@@ -8,31 +8,36 @@ const renderGifts = async () => {
     if (data) {
 
         data.map(gift => {
-            const card = document.createElement('div')
+            const card = document.createElement('article')
             card.classList.add('card')
 
-            const topContainer = document.createElement('div')
+            const topContainer = document.createElement('header')
             topContainer.classList.add('top-container')
 
-            const bottomContainer = document.createElement('div')
+            const bottomContainer = document.createElement('footer')
             bottomContainer.classList.add('bottom-container')
+
+            const cardText = document.createElement('div')
+            cardText.classList.add('card-text')
 
             topContainer.style.backgroundImage = `url(${gift.image})`
 
             const name = document.createElement('h3')
             name.textContent = gift.name
-            bottomContainer.appendChild(name)
+            cardText.appendChild(name)
 
             const pricePoint = document.createElement('p')
             pricePoint.textContent = 'Price: ' + gift.pricePoint
-            bottomContainer.appendChild(pricePoint)
+            cardText.appendChild(pricePoint)
 
             const audience = document.createElement('p')
             audience.textContent = 'Great For: ' + gift.audience
-            bottomContainer.appendChild(audience)
+            cardText.appendChild(audience)
+
+            bottomContainer.appendChild(cardText)
 
             const link = document.createElement('a')
-            link.textContent = 'Read More >'
+            link.textContent = 'Read More'
             link.setAttribute('role', 'button')
             link.href = `/gifts/${gift.id}`
             bottomContainer.appendChild(link)

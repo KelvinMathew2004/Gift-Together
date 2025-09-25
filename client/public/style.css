@@ -1,9 +1,4 @@
 /* Root Styles CSS */
-:root {
-    background-color: white;
-    font-family: Avenir, Helvetica, sans-serif;
-    color: black;
-}
 
 /* Header CSS */
 .header-container {
@@ -26,7 +21,6 @@
 }
 
 .header-left h1 {
-    font-size: 45px;
     margin: 0;
     margin-top: 20px;
     white-space: nowrap;
@@ -38,21 +32,10 @@
 }
 
 .header-right > button {
-    font-size: large;
-    padding: 10px 15px;
-    background-color: #6363a5;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: transform 0.2s, background-color 0.2s;
 }
 
 .header-right > button:hover {
-    background-color: #3c4093;
-    color: white;
     transform: scale(1.05);
 }
 
@@ -66,18 +49,19 @@ main {
 }
 
 .card {
-    width: 300px;
-    height: 400px;
-    background: transparent;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(3, 7, 89);
-    border-radius: 0.3rem;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.057);
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-right: 40px;
-    margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 3px solid var(--pico-color);
+  border-radius: 0.3rem;
+  box-shadow: 12px 12px 2px 1px var(--pico-color);
+  margin: 0 40px 60px 20px;
+}
+
+.card:hover {
+    box-shadow: 16px 16px 4px 2px var(--pico-color);
+    transform: scale(1.02);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card img {
@@ -85,29 +69,30 @@ main {
 }
 
 .top-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display-image {
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.display-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .bottom-container {
-    margin-top:30px;
-    margin-left: 10px;
-}
-
-.bottom-container h3 {
-    margin-top: 10px;
-    margin-bottom: 6px;
-}
-
-.bottom-container p {
-    margin: 2px;
-}
-
-.bottom-container a {
-    color: rgb(228, 16, 133);
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100%;
 }
 
 /* 404 Page CSS */
