@@ -13,9 +13,9 @@ const renderGift = async () => {
   if (gift) {
     document.getElementById('image').src = gift.image;
     document.getElementById('name').textContent = gift.name;
-    document.getElementById('submittedBy').textContent = `Submitted by: ${gift.submittedBy}`;
-    document.getElementById('submittedOn').textContent = `Submitted on: ${gift.submittedOn}`;
-    document.getElementById('pricePoint').textContent = `Price: ${gift.pricePoint}`;
+    document.getElementById('submittedBy').textContent = `Submitted by: ${gift.submittedby}`;
+    document.getElementById('submittedOn').textContent = `Submitted on: ${gift.submittedon}`;
+    document.getElementById('pricePoint').textContent = `Price: ${gift.pricepoint}`;
     document.getElementById('audience').textContent = `Great For: ${gift.audience}`;
     document.getElementById('description').textContent = gift.description;
     document.title = gift.name;

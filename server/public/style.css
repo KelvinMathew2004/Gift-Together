@@ -69,10 +69,23 @@ main {
 }
 
 .top-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display-image {
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.display-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .bottom-container {

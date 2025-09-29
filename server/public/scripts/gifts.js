@@ -6,7 +6,6 @@ const renderGifts = async () => {
     const mainContent = document.getElementById('main-content')
 
     if (data) {
-
         data.map(gift => {
             const card = document.createElement('article')
             card.classList.add('card')
@@ -17,24 +16,26 @@ const renderGifts = async () => {
             const bottomContainer = document.createElement('footer')
             bottomContainer.classList.add('bottom-container')
 
-            const cardText = document.createElement('div')
-            cardText.classList.add('card-text')
+            const imageContainer = document.createElement('div')
+            imageContainer.classList.add('display-image')
 
-            topContainer.style.backgroundImage = `url(${gift.image})`
+            const image = document.createElement('img')
+            image.src = gift.image
+            image.alt = gift.name
+            imageContainer.appendChild(image)
+            topContainer.appendChild(imageContainer)
 
             const name = document.createElement('h3')
             name.textContent = gift.name
-            cardText.appendChild(name)
+            topContainer.appendChild(name)
 
             const pricePoint = document.createElement('p')
-            pricePoint.textContent = 'Price: ' + gift.pricePoint
-            cardText.appendChild(pricePoint)
+            pricePoint.textContent = 'Price: ' + gift.pricepoint
+            topContainer.appendChild(pricePoint)
 
             const audience = document.createElement('p')
             audience.textContent = 'Great For: ' + gift.audience
-            cardText.appendChild(audience)
-
-            bottomContainer.appendChild(cardText)
+            topContainer.appendChild(audience)
 
             const link = document.createElement('a')
             link.textContent = 'Read More'
@@ -43,10 +44,10 @@ const renderGifts = async () => {
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
-            card.appendChild(bottomContainer) 
+            card.appendChild(bottomContainer)
             mainContent.appendChild(card)
         })
-    }
+        }
     else {
         const message = document.createElement('h2')
         message.textContent = 'No Gifts Available 😞'
