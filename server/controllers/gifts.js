@@ -10,6 +10,21 @@ const getGifts = async (request, response) => {
     }
 }
 
+const getGiftById = async (req, res) => {
+  try {
+    const giftId = req.params.giftId
+    const selectQuery = `
+      SELECT name, pricepoint, audience, image, description, submittedby, submittedon
+      FROM gifts
+      WHERE id=$1
+    `
+    const results = await pool.query(selectQuery, [giftId])
+    res.status(200).json(results.rows[0])
+  } catch (error) {
+    res.status(409).json({ error: error.message })
+  }
+}
+
 const createGift = async (req, res) => {
   try {
       const { name, pricepoint, audience, image, description, submittedby, submittedon } = req.body
@@ -52,6 +67,7 @@ const deleteGift = async (req, res) => {
 
 export default {
     getGifts, 
+    getGiftById,
     createGift, 
     updateGift,
     deleteGift

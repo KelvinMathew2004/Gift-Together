@@ -16,15 +16,27 @@ const EditGift = () => {
         submittedon: ''
     })
 
-    useEffect(() => {
-        const fetchGiftById = async () => {
-            const response = await fetch(`/gifts/${id}`)
-            const data = await response.json()
-            setGift(data)
-        }
+    // useEffect(() => {
+    //     const fetchGiftById = async () => {
+    //         const response = await fetch(`/gifts/${id}`)
+    //         const data = await response.json()
+    //         setGift(data)
+    //     }
 
-        fetchGiftById()
-    }, [id])
+    //     fetchGiftById()
+    // }, [id])
+
+    useEffect(() => {
+        const fetchGifts = async () => {
+            const url = 'http://localhost:3000/gifts/'
+            const response = await fetch(url);
+            const data = await response.json();
+
+            const result = data.filter(gift => gift.id === parseInt(id))[0];
+            setGift({id: parseInt(result.id), name: result.name, pricepoint: result.pricepoint, audience: result.audience, image: result.image, description: result.description, submittedby: result.submittedby, total_cost: result.submittedon.slice(0,10)});
+        }
+        fetchGifts()
+    }, [id]);
 
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -39,14 +51,24 @@ const EditGift = () => {
     
     const updateGift = (event) => {
         event.preventDefault()
-
-        
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(gift),
+        }
+        fetch(`/gifts/${id}`, options)
+        window.location = '/'
     }
 
     const deleteGift = (event) => {
         event.preventDefault()
-
-        
+        const options = {
+            method: 'DELETE'
+        }
+        fetch(`/gifts/${id}`, options)
+        window.location = '/'
     }
 
     return (
