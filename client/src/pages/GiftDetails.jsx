@@ -1,16 +1,20 @@
 
 
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import './GiftDetails.css'
 
 const GiftDetails = ({data}) => {
 
+    const {id} = useParams();
     const [gift, setGift] = useState({id: 0, name: "", pricepoint: "", audience: "", image: "", description: "", submittedby: "", submittedon: ""})
 
 
     useEffect(() => {
+        const result = data.filter(gift => gift.id === parseInt(id))[0];
+        setGift({id: parseInt(result.id), name: result.name, pricepoint: result.pricepoint, audience: result.audience, image: result.image, description: result.description, submittedby: result.submittedby, total_cost: result.submittedon.slice(0,10)});
 
-    }, []);
+    }, [data, id]);
 
 
     return (

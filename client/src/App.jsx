@@ -14,8 +14,17 @@ const App = () => {
 
   useEffect(() => {
 
-  
-    
+    const fetchGifts = async () => {
+
+      const url = 'http://localhost:3000/gifts/'
+      const response = await fetch(url);
+      const json = await response.json();
+
+      setGifts(json);
+      return json;
+    }
+
+    fetchGifts();
 
   }, []);
 

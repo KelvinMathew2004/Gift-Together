@@ -1,14 +1,11 @@
-import { pool } from '../config/database.js'
+import { pool } from '../db/db.js'
 
-const getGifts = async (req, res) => {
+export const getGifts = async (request, response) => {
     try {
-        const results = await pool.query('SELECT * FROM gifts ORDER BY id ASC')
-        res.status(200).json(results.rows)
-    } catch (error) {
-        res.status(409).json( { error: error.message } )
+        const results = await pool.query('SELECT * FROM gifts ORDER BY id ASC');
+        response.status(200).json(results.rows);
     }
-}
-
-export default {
-  getGifts
+    catch (error) {
+        response.status(409).json({error: error.message});
+    }
 }
