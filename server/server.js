@@ -10,6 +10,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({extended: true}));
 app.use(cors())
+app.use(express.json())
 
 // routes
 app.use('/gifts', giftsRouter)
