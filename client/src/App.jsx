@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useRoutes } from 'react-router-dom'
 import Gifts from './pages/Gifts'
 import GiftDetails from './pages/GiftDetails'
+import CreateGift from './pages/CreateGift'
+import EditGift from './pages/EditGift'
 import PageNotFound from './pages/PageNotFound'
 import { Link } from 'react-router-dom'
 
@@ -40,6 +42,14 @@ const App = () => {
       element: <GiftDetails data={gifts} />
     },
     {
+      path: '/new',
+      element: <CreateGift />
+    },
+    {
+      path: '/edit/:id',
+      element: <EditGift data={gifts} />
+    },
+    {
       path:"/*",
       element: <PageNotFound />
     }
@@ -58,6 +68,7 @@ const App = () => {
           </div>
           <div className="header-right">
             <Link to="/"><button className="homeBtn">Home</button></Link>
+            <Link to='/new'><button className='addBtn'>+ Add Gift</button></Link>
           </div>
         </div>
       </header>
